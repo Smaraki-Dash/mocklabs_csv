@@ -1,0 +1,15 @@
+{% extends "hr/base.html" %}
+
+{% block title %}
+hr_un
+{% endblock title %}
+
+{% block content %}
+<h1>hr_un</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="un">Enter Your Username</label> 
+    <input type="text" id="un" name="un"><br><br>
+    <button>Send OTP</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "student/base.html" %}
+
+{% block head %}
+<title>Trainer_login</title>
+{% endblock head %}
+
+{% block content %}
+<h1>Trainer_login</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <form>
+          <label for="un" class="form-label">Username</label>
+          <input type="text" class="form-control" id="un" aria-describedby="emailHelp" name="un">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" name="pw">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+</form>
+{% endblock content %}

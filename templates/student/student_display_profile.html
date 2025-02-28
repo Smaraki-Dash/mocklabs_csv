@@ -1,0 +1,25 @@
+{% extends "student/base.html" %}
+
+{% block head %}
+<title>Student Display Profile</title>
+{% endblock head %}
+
+{% block content %}
+<h1>student_display_profile</h1>
+{% if UO %}
+    <h3>Welcome, {{UO.username}}</h3>
+    <p>Email : {{UO.email}}</p>
+    <p>First Name: {{UO.first_name}}</p>
+    <p>Last Name: {{UO.last_name}}</p>
+    {% if PO %}
+        <p>Phn No: {{PO.pno}}</p>
+        <p>Couser you are pursuing: {{PO.course}}</p>
+        <p>Profile pic: <img src="{{PO.profile_pic.url}}" alt="" height="100px" width="100px"></p>
+        <p>Resume: <a href="{{PO.resume.url}}">Download your resume</a></p>
+    {% else %}
+        <p>Profile object not found</p>
+    {% endif %}
+{% else %}
+    <p>User Object not found</p>
+{% endif %}
+{% endblock content %}

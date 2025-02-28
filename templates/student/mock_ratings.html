@@ -1,0 +1,42 @@
+{% extends "student/base.html" %}
+
+{% block head %}
+<title>mock_ratings</title>
+<style>
+    table, th, tr, td{
+        border: 2px solid black;
+        border-collapse: collapse;
+    }
+</style>
+{% endblock head %}
+
+{% block content %}
+<h1>mock_ratings</h1>
+<table>
+    <th>
+        <tr>
+            <td>Student</td>
+            <td>Subject</td>
+            <td>Communication</td>
+            <td>Technical</td>
+            <td>Programming</td>
+            <td>Remarks</td>
+            <td>Conducted By</td>
+            <td>Conducted On</td>
+        </tr>
+    </th>
+    {% for rating in all_ratings %}
+    <tr>
+        <td>{{rating.student}}</td>
+        <td>{{rating.subjects}}</td>
+        <td>{{rating.communication}}</td>
+        <td>{{rating.technical}}</td>
+        <td>{{rating.programming}}</td>
+        <td>{{rating.remarks}}</td>
+        <td>{{rating.conducted_by }}</td>
+        <td>{{rating.conducted_on}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

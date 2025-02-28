@@ -1,0 +1,15 @@
+{% extends "student/base.html" %}
+
+{% block title %}
+student_un
+{% endblock title %}
+
+{% block content %}
+<h1>student_un</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="un">Username</label>
+    <input type="text" name="un" id="un"> <br>
+    <input type="button" value="Send OTP">
+</form>
+{% endblock content %}

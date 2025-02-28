@@ -1,0 +1,108 @@
+{% extends "student/base.html" %}
+
+{% block head %}
+<title>student_register</title>
+<link rel="stylesheet" href="/static/student/student_register.css">
+
+{% endblock head %}
+
+{% block content %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+    body{
+        background: url("../../static/student/background-reg.jpg") no-repeat;
+        background-size: cover;
+        /* backdrop-filter: blur(6px); */
+        /* overflow: none; */
+    }
+    nav{
+        background-image: linear-gradient(to right,rgb(72, 72, 156), white, grey);
+    }
+    h3{
+        margin-top: 3px;
+        margin-bottom: 0px;
+        padding-bottom: 3px;
+        text-align: center;
+        width: 625px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(20px);
+        color: #064f97;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        margin-left: 370px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    textarea{
+        width: 300px;
+        height: 35px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+        /* border: 3px solid grey; */
+    }
+    form{
+        width: 46%;
+        /* border: 5px solid grey; */
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        backdrop-filter: blur(20px);
+        color: white;
+        /* background-color: grey; */
+        
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    form p{
+        margin-left: 10px;
+        display: flex;
+        justify-content: space-between;
+        padding-right: 5px;
+    }
+    form p input{
+        width: 300px;
+        height: 33px;
+        border: 1px solid grey;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    form p select{
+        height: 30px;
+        width: 300px;
+        text-align: center;
+        text-align: justify;
+        color: grey;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    }
+    input[type=file]{
+        color: grey;
+    }
+    input[type=submit]{
+        width: 130px;
+        height: 33px;
+        font-weight: bold;
+        font-size: 20px;
+        padding-top: 0px;
+        color: grey;
+        background-image: linear-gradient(to right, grey, white, grey);
+        margin-left: 240px;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    /* input[type=submit]:hover{
+        background-color: navy;
+        color: white;
+    } */
+</style>
+
+<h3>Registeration Form</h3>
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ESUFO.as_p}}
+    {{ESPFO.as_p}}
+    <input type="submit" value="Register">
+</form>
+{% endblock content %}

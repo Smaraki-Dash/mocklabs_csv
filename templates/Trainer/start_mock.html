@@ -1,0 +1,41 @@
+{% extends "Trainer/base.html" %}
+
+{% block head %}
+<title>Start Mock</title>
+{% endblock head %}
+
+{% block content %}
+{% comment %} <nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <form class="d-flex" role="search">
+        {% for rating in students  %}
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" value="{{rating.student}}" list="stulist">
+        <datalist id="stulist">
+        <option value="{{rating.student}}">{{rating.student}}</option>
+        </datalist>
+        {% endfor %}
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+  </div> {% endcomment %}
+{% comment %} </nav> {% endcomment %}
+{% comment %} <nav class="navbar bg-body-tertiary">
+  
+</nav> {% endcomment %}
+
+<h1>Start Mock Here</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="container-fluid" style="display: flex;">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search" list="stulist" style="width: 300px; border: 2px solid grey;">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+      <datalist id="stulist">
+      {% for stu in SO %}
+      {{stu.User}}
+      <option value="{{stu.username}}">{{stu}}</option>
+      {% endfor %}
+      </datalist>
+  </div> <br>
+    {{ERFO.as_p}}
+    <input type="submit" value="Start Mock">
+</form>
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends "student/base.html" %}
+
+{% block head %}
+<title>Student Home</title>
+ <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-image: linear-gradient(to left, rgb(248, 221, 226), white, rgb(248, 221, 226));
+    }
+    .container{
+        display: grid;
+        place-items: center;
+        height: 100vh;
+    }
+    #firsth1{
+        /* display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center; */
+        color: pink;
+    }
+ </style>
+{% endblock head %}
+
+{% block content %}
+
+<div class="container">
+    {% if user.is_authenticated %}
+<h1 id="firsth1">Boost Your Confidence: Practice Mock Interviews </h1>
+<h3>Welcome To  Home Page Mr/Mis {{user.username}}</h3>
+<a href="{{PO.resume}}" download>Download your resume here</a>
+{% else %}
+<h1>Home Page</h1>
+{% endif %}
+</div>
+
+{% endblock content %}

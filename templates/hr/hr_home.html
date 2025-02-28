@@ -1,0 +1,15 @@
+{% extends "hr/base.html" %}
+
+{% block title %}
+hr_home
+{% endblock title %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<h1>Welcome to Home page {{user.username}}</h1>
+{% else %}
+<h1>hr_home</h1>
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "hr/base.html" %}
+
+{% block title %}
+hr_un
+{% endblock title %}
+
+{% block content %}
+<h1>hr_un</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    <label for="pw">Enter new password</label>
+    <input type="text" id="pw" name="pw"> <br><br>
+    <label for="cpw">Confirm Password </label>
+    <input type="text" id="cpw" name="cpw"> <br><br>
+    <button>Change Password</button>
+</form>
+{% endblock content %}
